@@ -27,11 +27,12 @@
     </style>
 
 </head>
-<body class="min-h-screen max-w-md bg-base-200 mx-auto flex flex-col justify-center">
+<body>
 
-    <!-- login box -->
+    <div class="min-h-screen max-w-md bg-base-200 mx-auto">
+            <!-- login box -->
    
-        <figure class="mb-8 max-w-50 mx-auto">
+        <figure class="mb-8 max-w-50 mx-auto pt-15">
             <img src="./assets/Logo-full.png" alt="Payoo logo">
         </figure>
 
@@ -41,14 +42,16 @@
                 <div class="card-body">
                 <fieldset class="fieldset">
                   <label class="label text-neutral font-semibold">Mobile Number</label>
-                  <input maxlength="11"  type="text" class="input rounded-full bg-base-200 border-none" placeholder="Enter your 11 digit number" />
+                  <input id="input-number"  type="text" class="input rounded-full bg-base-200 border-none" placeholder="Enter your 11 digit number" />
                   <label class="label text-neutral font-semibold">4 Digit Pin</label>
-                  <input maxlength="4" type="text" class="input rounded-full bg-base-200 border-none" placeholder="Enter 4 Digit Pin" />
-                  <button class="btn btn-primary mt-4 rounded-full">Login</button>
+                  <input id="input-pin" maxlength="4" type="text" class="input rounded-full bg-base-200 border-none" placeholder="Enter 4 Digit Pin" />
+                  <button id="login-btn" class="btn btn-primary mt-4 rounded-full">Login</button>
                 </fieldset>
               </div>
         </div>
        
+    </div>
+        <script src="./script/utility.js"></script>
         <script src="./script/login.js"></script>
 </body>
 </html>
