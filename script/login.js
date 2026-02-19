@@ -11,7 +11,7 @@ document.getElementById('login-btn').addEventListener('click',
         const pin = Number(inputPin.value);
        
        
-        if(contactNumber=='01400596304'){
+        if(contactNumber.length === 11){
             if(pin === 1234){
 
                 alert('login success')
