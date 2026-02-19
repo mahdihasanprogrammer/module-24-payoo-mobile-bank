@@ -27,9 +27,9 @@
     </style>
 
 </head>
-<body class="min-h-screen max-w-md bg-base-100 mx-auto">
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
     
-        <nav class="flex justify-between items-center px-4 lg:px-0 py-6 border-b-2 border-base-300">
+        <nav class="flex justify-between items-center px-4  py-6 border-b-2 border-base-300 bg-base-100">
 
             <div class="flex gap-2">
 
@@ -48,8 +48,8 @@
             </a>
         </nav>
 
-        <!-- section -->
-         <section class="px-4 lg:px-0 py-10 space-y-10">
+        <!--hero section for home page  -->
+         <section class="px-4 py-10 rounded-b-3xl bg-base-100 space-y-6 border-b-2 border-base-300">
             <!-- text -->
              <div>
                 <h2 class="mb-2.5 text-2xl font-bold">Welcome to Pay<span class="text-primary">oo</span></h2>
@@ -59,40 +59,62 @@
              </div>
 
              <!-- card box -->
-              <div class="grid md:grid-cols-3 gap-4">
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
 
-                <button class="btn btn-wide flex-col h-auto py-4 border-2 rounded-xl">
+                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-1.png" alt="">
                     <p class="text-neutral/60 mt-1">Add Money</p>
                 </button>
 
-                <button class="btn btn-wide flex-col h-auto py-4 border-2 rounded-xl">
+                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-2.png" alt="">
                     <p class="text-neutral/60 mt-1">Cashout</p>
                 </button>
 
-                <button class="btn btn-wide flex-col h-auto py-4 border-2 rounded-xl">
+                <button class="btn flex-col px-0 h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-3.png" alt="">
                     <p class="text-neutral/60 mt-1">Transfer Money</p>
                 </button>
 
-                <button class="btn btn-wide flex-col h-auto py-4 border-2 rounded-xl">
+                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-4.png" alt="">
                     <p class="text-neutral/60 mt-1">Get Bonus</p>
                 </button>
 
-                <button class="btn btn-wide flex-col h-auto py-4 border-2 rounded-xl">
+                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-5.png" alt="">
                     <p class="text-neutral/60 mt-1">Pay Bill</p>
                 </button>
 
-                <button class="btn btn-wide flex-col h-auto py-4 border-2 rounded-xl">
+                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-6.png" alt="">
-                    <p class="text-neutral/60 mt-1">Transactions</p>
+                    <p class="text-neutral/60 mt-">Transactions</p>
                 </button>
 
                 
               </div>
          </section>
+
+         <!-- cash Out section -->
+          <section class="px-4 py-6">
+            <h1 class="text-lg font-semibold  pb-4">Cash Out</h1>
+
+           <form class="w-full pb-10">
+             <div class="card bg-base-100 w-full shadow rounded-3xl">
+                <div class="card-body">
+                <fieldset class="fieldset space-y-2">
+                  <label class="label text-neutral/70 font-semibold text-base">Mobile Number</label>
+                  <input id="input-number"  type="text" class="w-full input rounded-full bg-base-200 border-none py-4 h-auto placeholder:text-base" placeholder="Enter your 11 digit number" />
+                  <label class="label text-neutral/70 font-semibold text-base">Amount</label>
+                  <input id="cashout-amount" maxlength="4" type="number" class="w-full input rounded-full bg-base-200 border-none py-4 h-auto placeholder:text-base" placeholder="Enter amount to withdraw" />
+
+                  <label class="label text-neutral/70 font-semibold text-base">4 Digit Pin</label>
+                  <input id="cashout-pin" maxlength="4" type="password" class="w-full input rounded-full bg-base-200 border-none py-4 h-auto placeholder:text-base" placeholder="Enter 4 Digit Pin" />
+                  <button id="cashout-btn" class="btn btn-primary mt-4 rounded-full text-xl py-4 h-auto">Withdraw Money</button>
+                </fieldset>
+              </div>
+            </div>
+           </form>
+          </section>
 </body>
 </html>
