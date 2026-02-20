@@ -27,7 +27,7 @@
     </style>
 
 </head>
-<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+<body class="min-h-screen max-w-md px-2 bg-base-200 mx-auto">
     
         <nav class="sticky top-0 z-10 flex justify-between items-center px-4  py-6 border-b-2 border-base-300 bg-base-100">
 
@@ -61,12 +61,12 @@
              <!-- card box -->
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
 
-                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
+                <button onclick="showOnly('add-money-section')" id="add-money" class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-1.png" alt="">
                     <p class="text-neutral/60 mt-1">Add Money</p>
                 </button>
 
-                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
+                <button onclick="showOnly('cash-out-section')" id="cashout" class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-2.png" alt="">
                     <p class="text-neutral/60 mt-1">Cashout</p>
                 </button>
@@ -86,7 +86,7 @@
                     <p class="text-neutral/60 mt-1">Pay Bill</p>
                 </button>
 
-                <button class="btn flex-col h-auto py-5 border-2 rounded-xl">
+                <button onclick="showOnly('history')" class="btn flex-col h-auto py-5 border-2 rounded-xl">
                     <img src="./assets/opt-6.png" alt="">
                     <p class="text-neutral/60 mt-">Transactions</p>
                 </button>
@@ -95,8 +95,43 @@
               </div>
          </section>
 
+
+           <!-- Add money section -->
+          <section id="add-money-section" class="px-4 py-6 hidden">
+            <h1 class="text-lg font-semibold  pb-4">Add Money</h1>
+
+           <form class="w-full pb-10">
+             <div class="card bg-base-100 w-full shadow rounded-3xl">
+                <div class="card-body">
+
+                <fieldset class="fieldset space-y-2">
+
+                    <label class="label text-neutral/70 font-semibold text-base">Select A Bank</label>
+                    <select id="add-money-bank" class="select w-full rounded-full bg-base-200 border-none py-4 h-auto " name="select">
+                        <option id="o1" disabled selected value="Select A Bank">Select A Bank</option>
+                        <option id="o1" value="bKash">bKash</option>
+                        <option id="o1" value="Nagad">Nagad</option>
+                        <option id="o1" value="Islami Bank">Islami Bank</option>
+                    </select>
+
+                  <label class="label text-neutral/70 font-semibold text-base"> Bank Account Number</label>
+                  <input id="account-number"  type="text" class="w-full input rounded-full bg-base-200 border-none py-4 h-auto placeholder:text-base" placeholder="Enter your 11 digit number" />
+
+                  <label class="label text-neutral/70 font-semibold text-base">Amount to Add</label>
+                  <input id="add-amount" maxlength="4" type="number" class="w-full input rounded-full bg-base-200 border-none py-4 h-auto placeholder:text-base" placeholder="Enter amount to withdraw" />
+
+                  <label class="label text-neutral/70 font-semibold text-base">Pin Number</label>
+                  <input id="addMoney-pin" maxlength="4" type="password" class="w-full input rounded-full bg-base-200 border-none py-4 h-auto placeholder:text-base" placeholder="Enter 4 Digit Pin" />
+
+                  <button id="addMoney-btn" class="btn btn-primary mt-4 rounded-full text-xl py-4 h-auto">Add Money</button>
+                </fieldset>
+              </div>
+            </div>
+           </form>
+          </section>
+
          <!-- cash Out section -->
-          <section class="px-4 py-6">
+          <section id="cash-out-section" class="px-4 py-6 hidden">
             <h1 class="text-lg font-semibold  pb-4">Cash Out</h1>
 
            <form class="w-full pb-10">
@@ -120,6 +155,21 @@
            </form>
           </section>
 
+
+          <!-- history section -->
+           <section id="history" class=" py-6 px-4 hidden">
+            <h1 class="text-lg font-semibold  pb-4">Transaction</h1>
+
+            <div id="history-container" class="card bg-base-100 w-full shadow rounded-3xl space-y-4">
+                
+            </div>
+           </section>
+
+          <script src="./script/machine.js"></script>
+          <script src="./script/add-mony.js"></script>
           <script src="./script/cashout.js"></script>
+          <script src="./script/toggle.js"></script>
+          
+        
 </body>
 </html>

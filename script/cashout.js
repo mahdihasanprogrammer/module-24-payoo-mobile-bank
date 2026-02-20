@@ -39,7 +39,24 @@ document.getElementById('cashout-btn').addEventListener('click',
         if(cashoutPin === 5024){
              alert('Cash Out Successfully');
              balanceInput.value='';
-             return currentBalanceText.innerText=newBalance;
+             currentBalanceText.innerText=newBalance;
+
+                  // -------------------- added add money history;--------------------
+             // 1. get parent.
+            const historyContainer = document.getElementById('history-container');
+            historyContainer.classList.add('p-4')
+            // 2. create new div;
+            const newDiv = document.createElement('div');
+            newDiv.innerHTML=`
+                <div id="transaction" class="bg-base-200 p-5 rounded-2xl">
+                   <p>Cash Out ${Number(balance)} success from ${agentNumber},</p>
+                     <p>at ${new Date()}.</p>
+                     <p>current balance: ${newBalance}.</p>
+                </div>
+            `
+            console.log(newDiv)
+            // 3. append child with parent;
+            historyContainer.appendChild(newDiv)
 
            
         }
